@@ -1,9 +1,87 @@
-<html>
-  <Headers></Headers>
-  <body>
-    <p>coucou</p>
-    <form>
-      <input></input>
-    </form>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div> Titre de la page : <span id="titre"></span></div>
+        <div class="menu"><img class="menu" src="./images/hamburger.png" alt="menu hamburger"></div>
+    </nav>
+    <div class="subnavbar unactive">
+        <ul class="subnavbarlist">
+            
+        </ul>
+    </div>
+    <div class="main-page">
+        <header>
+            <div class="presentation">
+        
+            </div>
+        </header>
+        <p>Cette page est destinée à s'entrainer et retrouver les réflexes acquis lors de la formation initiale réalisée avec la Wild Code School</p>
+        <p>
+            Cliquer <a href="http://www.lemonde.fr">ici</a>
+        </p>
+        <h1> Changer le titre de la page dans la navBar</h1>
+        <form>
+            <label for="titre">Titre à insérer dans la navBar</label>
+            <input type="text" class="title" name="title" id="title">
+            <button type="text" onclick="modifyTitle(event)">Modifier le Titre</button>
+        </form>
+        <h1>Gestionaire de tâches</h1>
+          <label for="tache">Tâche à ajouter :  </label>
+            <input type="text" name="tache" id="tache"></input>
+            <button type="button" onclick="displayAlert()">ajout</button>
+            <button type="button" onclick="deleteLastTask()" class="buttonDelete">Supprimer la dernière Tâche</button>
+        </form>
+        <ul class="tasklist">
+        </ul>
+        <main>
+    
+            <h1>Utilisation de display flex</h1>
+            <section class="content">
+                <div class="contenu">1</div><div class="contenu">2</div><div class="contenu">3</div><div class="contenu">4</div><div class="contenu">5</div>
+                <!-- <div class="contenu"></div><div class="contenu"></div><div class="contenu"></div>
+                    <div class="contenu"></div><div class="contenu"></div><div class="contenu"></div>
+                    <div class="contenu"></div><div class="contenu"></div><div class="contenu"></div>
+                    <div class="contenu"></div><div class="contenu"></div><div class="contenu"></div>
+                    <div class="contenu"></div><div class="contenu"></div><div class="contenu"></div> -->
+            </section>
+            <h1>Utilisation de display grid</h1>
+            <section class="presentation-paragraph">
+                <div class="paragraph">coucou</div>
+                <div class="paragraph" id="div2">contenu 2 très spécial</div>
+                <div class="paragraph">Serviteur du peuple, deux fois plus de contenu</div>
+                <div class="paragraph">coucou</div>
+                <div class="paragraph">contenu 2</div>
+                <div class="paragraph">Serviteur du peuple, deux fois plus de contenu</div>
+                <div class="paragraph">coucou</div>
+                <div class="paragraph">contenu 2</div>
+                <div class="paragraph">Serviteur du peuple, deux fois plus de contenu</div>
+            </section>
+            <h1> Afficher une boite de dialogue en milieu de la page</h1>
+            <p>Cette section consiste à afficher une boite de dialogue au milieu de la page en utilisant les propriété css display fix et relative</p>
+            <p>Appuyer <a class="displayphoto" onclick="displayPhoto()">ici</a> pour afficher ma photo</p>
+            <div class="hiddenbox">
+                <div>
+                    <img class="photo" src="https://www.itespresso.fr/wp-content/uploads/2013/09/basile-carle-idate-microsoft-acquisition-nokia.jpg" alt="photo de Basile Carle, consultant spécialiste des technologies mobiles et réseau d'accès radio"/>
+                </div>
+                <div>Fascinated by new technologies, I have developed a 14 years long expertise in telecommunication and mobile innovations before taking the decision to develop new competences in software development. The rationale behind this decision is the willingness to swap roles after years of research and consulting, not just explaining and advising people on how to use technologies or understand the impact of new technologies, but rather start creating myself, taking part in the digital revolution. My journey started with a 5 month web development bootcamp and I am now looking forward to strengthen this initial training through cooperative training (alternance in French).</div>
+                <a  href="#" class="closebox">x</a>
+            </div>
+        </main>
+        
+    </div>
+    <footer>
+        <div class="navbar"><small>Copyright: Basile CARLE</small></div>
+    </footer>
+<script src="./index.js"></script>
+</body>
 </html>
+
+

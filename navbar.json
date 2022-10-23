@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Accueil",
+    "link": "index.html"
+  },
+  {
+    "title": "Page 2",
+    "link": "page2.html"
+  },
+
+  {
+    "title": "Nous contacter",
+    "link": ""
+  },
+  {
+    "title": "Mon Compte client",
+    "link": ""
+  }
+]
