@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0;
+}
+
+.navbar {
+  width: 100vw;
+  height: 30px;
+  background-color: purple;
+  padding: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.burgerbtn {
+  width: 40px;
+  height: 31px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.clicked {
+  transform: rotate(-90deg);
+  transition: transform 0.3s ease;
+}
+
+.burgerline {
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  display: block;
+  margin: 5px;
+}
+
+.subnavbar {
+  width: 250px;
+  height: 100vh;
+  position: absolute;
+  background-color: #ff7f50;
+  top: 30px;
+  left: -250px;
+  padding: 60px;
+  transition: left 0.3s ease;
+}
+
+.active {
+  left: 0px;
+}
+
+#closebtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+}
+
+.subnavbarlist {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+main {
+  padding: 10px;
+}
+
+.mainpage2 div {
+  padding: 10px;
+}
+
+.preferences {
+  background-color: #f4a460;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.preferences form {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#search {
+  border-radius: 5px;
+  border: 0px;
+  padding: 0 5px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.simpsonquote div {
+  padding: 2px;
+}
+
+.quotecard {
+  width: 300px;
+  border: 1px solid rgba(128, 128, 128, 0.727);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.simpson-visual {
+  padding: 0;
+  margin: 0;
+}
