@@ -5,6 +5,7 @@ const burgerbtn = document.querySelector(".burgerbtn");
 const subnavbar = document.querySelector(".subnavbar");
 const subnavbarlist = document.querySelector(".subnavbarlist");
 const closebtn = document.querySelector("#closebtn");
+const savebtn = document.querySelector(".savebtn button");
 
 // load stuff at the beginning
 
@@ -43,6 +44,16 @@ burgerbtn.addEventListener("click", () => {
 closebtn.addEventListener("click", () => {
   subnavbar.classList.toggle("active");
 });
+
+// savebtn.addEventListener("click", () => {
+//   console.log("savebtn clicked");
+//   const param = `[${count}]`;
+//   fs.writeFile("params.json", param, (err) => {
+//     if (err) {
+//       throw err;
+//     } else console.log("params successfully saved");
+//   });
+// });
 
 // filter input
 
