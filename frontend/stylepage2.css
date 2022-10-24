@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+h1 {
+  margin: 20px 0;
+}
+
 .navbar {
   width: 100vw;
   height: 30px;
