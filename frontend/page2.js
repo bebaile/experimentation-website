@@ -1,17 +1,26 @@
 let simpsons;
-let count = 8; // number of quotes to fetch by default
+let count; // number of quotes to fetch by default
 
 const burgerbtn = document.querySelector(".burgerbtn");
 const subnavbar = document.querySelector(".subnavbar");
 const subnavbarlist = document.querySelector(".subnavbarlist");
 const closebtn = document.querySelector("#closebtn");
+const savebtn = document.querySelector(".savebtn button");
 
 // load stuff at the beginning
 
 const simpsonApi = `https://thesimpsonsquoteapi.glitch.me/quotes?count=${count}`;
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("#amount").value = count;
+  fetch("../backend/preference.json")
+    .then((res) => res.json())
+    .then((data) => {
+      fetchSimpsonQuotes(data[0].amount);
+      count = data[0].amount;
+    })
+    .then(() => {
+      document.querySelector("#amount").value = count;
+    });
   fetch("./title.json")
     .then((response) => response.json())
     .then((data) => {
@@ -29,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         subnavbarlist.appendChild(item);
       }
     });
-  fetchSimpsonQuotes(count);
 });
 
 // actions
@@ -42,6 +50,14 @@ burgerbtn.addEventListener("click", () => {
 
 closebtn.addEventListener("click", () => {
   subnavbar.classList.toggle("active");
+});
+
+savebtn.addEventListener("click", () => {
+  console.log("savebtn clicked");
+  const backendUrl = `http://localhost:3000/${count}`;
+  fetch(backendUrl).then((res) => {
+    console.log(res.data);
+  });
 });
 
 // filter input
