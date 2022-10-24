@@ -90,6 +90,20 @@ main {
   border-radius: 5px;
   border: 0px;
   padding: 0 5px;
+  padding-left: 5px;
+}
+
+#bywords {
+  border-radius: 5px;
+  border: 0px;
+  padding: 0 5px;
+  padding-left: 5px;
+}
+
+#amount {
+  border-radius: 5px 0px 0px 5px;
+  padding-left: 5px;
+  border: 0;
 }
 
 .cards {
@@ -115,4 +129,15 @@ main {
 .simpson-visual {
   padding: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 848px) {
+  .preferences form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  label {
+    margin: 5px 0;
+  }
 }

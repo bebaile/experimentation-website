@@ -1,5 +1,5 @@
 let simpsons;
-let count = 8;
+let count = 8; // number of quotes to fetch by default
 
 const burgerbtn = document.querySelector(".burgerbtn");
 const subnavbar = document.querySelector(".subnavbar");
@@ -30,12 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   fetchSimpsonQuotes(count);
-  // fetch(simpsonApi)
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     simpsons = data;
-  //     displaySimpsons(data);
-  //   });
 });
 
 // actions
@@ -56,6 +50,17 @@ document.querySelector("#search").addEventListener("change", () => {
   const searchValue = document.querySelector("#search").value;
   const filteredQuotes = simpsons.filter((character) =>
     character.character.includes(searchValue)
+  );
+  console.log(filteredQuotes);
+  displaySimpsons(filteredQuotes);
+});
+
+document.querySelector("#bywords").addEventListener("change", () => {
+  const searchValue = document.querySelector("#bywords").value;
+  const filteredQuotes = simpsons.filter(
+    (character) =>
+      character.character.toLowerCase().includes(searchValue.toLowerCase()) ||
+      character.quote.toLowerCase().includes(searchValue.toLowerCase())
   );
   console.log(filteredQuotes);
   displaySimpsons(filteredQuotes);
@@ -96,5 +101,12 @@ const fetchSimpsonQuotes = (count) => {
     .then((data) => {
       simpsons = data;
       displaySimpsons(data);
+    })
+    .then(() => {
+      simpsons.map((simpson) => {
+        document.querySelector(
+          "#search"
+        ).innerHTML += `<option value="${simpson.character}">${simpson.character}</option>`;
+      });
     });
 };

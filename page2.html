@@ -37,8 +37,14 @@
               <form>
                 <label for="search"
                   >Filtrer par personnage :
-                  <input type="text" id="search" name="search"
-                /></label>
+                  <select id="search" name="search">
+                    <option value=""></option>
+                  </select>
+                </label>
+                <label for="bywords"
+                  >Chercher un mot :
+                  <input type="text" id="bywords" name="bywords" />
+                </label>
                 <label for="amount">
                   Nombre de citations à afficher :
                   <input type="number" id="amount" max="15" min="1" />
