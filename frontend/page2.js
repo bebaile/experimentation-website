@@ -90,14 +90,7 @@ const displaySimpsons = (data) => {
     const quote = simpson.quote;
     const url = simpson.image;
     const character = simpson.character;
-    const cardHtml =
-      '<div class="quotecard"><div class="simpson-visual"><div class="image"><img src="' +
-      url +
-      '" height="100" /></div></div><div class="quote">"' +
-      quote +
-      '"</div><div class="name">' +
-      character +
-      "</div></div>";
+    const cardHtml = `<div class="quotecard"><div class="content"><div class="simpson-visual"><div class="image"><img src="${url}" height="100" /></div></div><div class="quote">"${quote}"</div><div class="name">${character}</div></div><div class="emptyline"></div><div class="filledline"></div></div>`;
     document.querySelector(".cards").innerHTML += cardHtml;
   });
 };
