@@ -112,7 +112,6 @@ main {
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -121,13 +120,35 @@ main {
 }
 
 .quotecard {
+  position: relative;
+  left: 0px;
   width: 300px;
-  border: 1px solid rgba(128, 128, 128, 0.727);
+  border: 1px solid rgba(192, 187, 187, 0.554);
   border-radius: 5px;
+  margin: 20px;
+  box-shadow: 1rem 0 3rem rgba(128, 128, 128, 0.554);
+  background-color: white;
+  transition: all 0.4s ease-out;
+}
+
+.quotecard:not(:first-child) {
+  margin-left: -150px;
+}
+
+.quotecard:hover {
+  transform: translatey(-20px);
+  transition: all 0.3s ease-out;
+}
+
+.quotecard:hover ~ .quotecard {
+  left: 150px;
+  z-index: -1;
+}
+
+.content {
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 20px;
 }
 
 .simpson-visual {
