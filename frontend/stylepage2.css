@@ -135,6 +135,10 @@ main {
   margin-left: -150px;
 }
 
+.quotecard:nth-child(2n + 1) {
+  top: 5px;
+}
+
 .quotecard:hover {
   transform: translatey(-20px);
   transition: all 0.3s ease-out;
