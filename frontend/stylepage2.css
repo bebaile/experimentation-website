@@ -110,9 +110,32 @@ main {
   border: 0;
 }
 
+.slider {
+  width: 960px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  left: calc(50% - 480px);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1200px);
+  }
+}
+
 .cards {
   display: flex;
   justify-content: center;
+  position: relative;
+  left: 0;
+  width: calc(150px * 8);
+  animation: scroll 20s linear infinite;
 }
 
 .simpsonquote div {
@@ -126,7 +149,7 @@ main {
   border: 1px solid rgba(192, 187, 187, 0.554);
   border-radius: 5px;
   margin: 20px;
-  box-shadow: 1rem 0 3rem rgba(128, 128, 128, 0.554);
+  box-shadow: 0.3rem 0.3rem 0.5rem rgba(128, 128, 128, 0.554);
   background-color: white;
   transition: all 0.4s ease-out;
 }
