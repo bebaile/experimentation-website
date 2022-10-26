@@ -160,7 +160,34 @@ main {
   margin: 0;
 }
 
+.emptyline {
+  border-radius: 10px;
+  background-color: rgba(61, 56, 56, 0.4);
+  width: 100px;
+  height: 5px;
+  position: absolute;
+  left: calc(50% - 50px);
+  bottom: 10px;
+}
+
+.filledline {
+  border-radius: 10px;
+  background: linear-gradient(90deg, #88d0fa, #f8da4c, #ec6ff9);
+  width: 0;
+  height: 5px;
+  position: absolute;
+  left: calc(50% - 50px);
+  bottom: 10px;
+  transition: all 0.4s ease-out;
+}
+
+.quotecard:hover .filledline {
+  width: 100px;
+  transition: all 0.4s ease-out;
+}
+
 .savebtn {
+  margin: 20px;
   display: flex;
   justify-content: center;
 }
