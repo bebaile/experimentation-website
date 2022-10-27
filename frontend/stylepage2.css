@@ -64,6 +64,8 @@ h1 {
 
 .active {
   left: 0px;
+  z-index: 3;
+  opacity: 0.95;
 }
 
 #closebtn {

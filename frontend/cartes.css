@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 30px;
+  background-color: purple;
+  padding: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.burgerbtn {
+  width: 40px;
+  height: 31px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.clicked {
+  transform: rotate(-90deg);
+  transition: transform 0.3s ease;
+}
+
+.burgerline {
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  display: block;
+  margin: 5px;
+}
+
+.subnavbar {
+  width: 250px;
+  height: calc(100% - 30px);
+  position: absolute;
+  background-color: #ff7f50;
+  top: 30px;
+  left: -250px;
+  padding: 60px;
+  transition: left 0.3s ease;
+}
+
+.active {
+  left: 0px;
+  z-index: 3;
+  opacity: 0.95;
+}
+
+#closebtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-decoration: none;
+}
+
+.subnavbarlist {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  max-width: 960px;
+  min-width: 360px;
+  height: 600px;
+  border: 1px solid rgba(203, 200, 200, 0.631);
+  border-radius: 10px;
+  box-shadow: 1rem 1rem 3rem rgba(203, 200, 200, 0.631);
+}
+
+.footer {
+  position: fixed;
+  width: 100vw;
+  height: 30px;
+  background-color: purple;
+  padding: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  z-index: 3;
+}

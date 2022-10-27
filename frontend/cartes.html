@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="cartes.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
+    />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div>
+        Titre de la page aléatoire chargé depuis un fichier .json:
+        <span id="titre"></span>
+      </div>
+      <div class="burgerbtn">
+        <a href="#" id="openbtn">
+          <span class="burgerline"></span>
+          <span class="burgerline"></span>
+          <span class="burgerline"></span>
+        </a>
+      </div>
+    </nav>
+    <div class="subnavbar">
+      <a href="#" id="closebtn">x</a>
+      <ul class="subnavbarlist"></ul>
+    </div>
+
+    <main>
+      <div class="main">
+        <div id="container"></div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer"><small>Copyright: Basile CARLE</small></div>
+    </footer>
+    <script src="./carte.js"></script>
+  </body>
+</html>
