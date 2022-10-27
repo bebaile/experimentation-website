@@ -86,6 +86,7 @@ document.querySelector("#bywords").addEventListener("change", () => {
 
 const displaySimpsons = (data) => {
   document.querySelector(".cards").innerHTML = "";
+
   data.map((simpson) => {
     const quote = simpson.quote;
     const url = simpson.image;

@@ -2,6 +2,12 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0;
+  --quotes-number: 10;
+  --hider-width: clamp(
+    360px,
+    calc(150px * (var(--quotes-number) - 1) + 300px),
+    960px
+  );
 }
 
 h1 {
@@ -110,13 +116,35 @@ main {
   border: 0;
 }
 
-.slider {
-  width: 960px;
+.hider {
+  width: var(--hider-width);
   display: flex;
   justify-content: flex-start;
   position: relative;
-  left: calc(50% - 480px);
-  overflow: hidden;
+  left: calc(50% - (var(--hider-width) / 2));
+}
+
+.hider::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+  right: 0;
+}
+
+.slider {
+  width: calc(150px * (var(--quotes-number) -1) + 300px);
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  left: calc(50% - (var(--hider-width) / 2));
+  left: 0;
+  overflow: auto;
   border-radius: 10px;
 }
 
@@ -125,7 +153,7 @@ main {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-1200px);
+    transform: translateX(-525px);
   }
 }
 
@@ -134,12 +162,17 @@ main {
   justify-content: center;
   position: relative;
   left: 0;
-  width: calc(150px * 8);
-  animation: scroll 20s linear infinite;
+  width: calc(150px * 5+ 150px);
+  /* animation: scroll 10s linear infinite; */
 }
 
 .simpsonquote div {
   padding: 2px;
+}
+
+.simpsonquote {
+  display: flex;
+  flex-direction: column;
 }
 
 .quotecard {
@@ -275,5 +308,36 @@ main {
 
   label {
     margin: 5px 0;
+  }
+
+  .hider {
+    width: 360px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    left: calc(50% - 180px);
+  }
+
+  .hider::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 150px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1)
+    );
+    right: 0;
+  }
+
+  .slider {
+    width: calc((var(--quotes-number) - 1) * 150px + 300px);
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    left: calc(50% - 225px);
+    overflow: auto;
+    border-radius: 10px;
   }
 }
