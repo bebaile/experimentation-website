@@ -1,6 +1,7 @@
 let simpsons;
 let count; // number of quotes to fetch by default
 
+const body = document.querySelector("body");
 const burgerbtn = document.querySelector(".burgerbtn");
 const subnavbar = document.querySelector(".subnavbar");
 const subnavbarlist = document.querySelector(".subnavbarlist");
@@ -15,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("../backend/preference.json")
     .then((res) => res.json())
     .then((data) => {
-      fetchSimpsonQuotes(data[0].amount);
       count = data[0].amount;
+      fetchSimpsonQuotes(count);
     })
     .then(() => {
       document.querySelector("#amount").value = count;
@@ -94,6 +95,8 @@ const displaySimpsons = (data) => {
     const cardHtml = `<div class="quotecard"><div class="content"><div class="simpson-visual"><div class="image"><img src="${url}" height="100" /></div></div><div class="quote">"${quote}"</div><div class="name">${character}</div></div><div class="emptyline"></div><div class="filledline"></div></div>`;
     document.querySelector(".cards").innerHTML += cardHtml;
   });
+  count = data.length;
+  body.style.setProperty("--quotes-number", count);
 };
 
 const amount = document.querySelector("#amount");
